@@ -1,4 +1,4 @@
-import bot
+import captio
 
 if __name__ == '__main__':
-    bot.run_discord_bot()
+    captio.run_discord_bot()
