@@ -1,11 +1,11 @@
 import requests
 
 
-async def send_request(user_message):
+async def send_request(user_msg):
     try:
-        if user_message.startswith('!dalle '):
+        if user_msg.startswith('!dalle '):
             # Extract the text to generate an image from the user message
-            text = user_message[len('!dalle '):].strip()
+            text = user_msg[len('!dalle '):].strip()
 
             # Make the API call to DALLE-2
             response = requests.post('https://api.openai.com/v1/images/generations', json={
