@@ -6,5 +6,6 @@ def handle_response(message) -> str:
                 "!dalle: Generates an image based on your input.\n"
                 "!davinci: Provides a text response based on your input.\n"
                 "!chat: Engages in a chat with the AI based on your input.\n"
-                "!chat remembers conversation history, clear it with !chat clear."
+                "!chat remembers conversation history, clear it with !chat clear.\n"
+                "You can send Captio private messages or talk with it in any channel."
                 )
