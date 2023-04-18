@@ -1,4 +1,8 @@
 import openai
+import os
+
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 def moderate(user_msg):
@@ -13,5 +17,4 @@ def moderate(user_msg):
                 f"This message is contains {categories} messages, can not perform task")
             moderation_flag = True
 
-    print('in moderate', moderation_flag)
     return moderation_flag
