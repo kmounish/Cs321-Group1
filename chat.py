@@ -1,7 +1,11 @@
 import openai
 import asyncio
 
+<<<<<<< Updated upstream
 openai.api_key = "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"
+=======
+openai.api_key = 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
+>>>>>>> Stashed changes
 
 
 async def send_request(user_msg):

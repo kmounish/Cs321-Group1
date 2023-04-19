@@ -1,4 +1,11 @@
 import requests
+<<<<<<< Updated upstream
+=======
+import os
+
+
+API_KEY=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
+>>>>>>> Stashed changes
 
 
 async def send_request(user_msg):
