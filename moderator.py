@@ -2,7 +2,7 @@ import openai
 import os
 
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = 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 #os.getenv("OPENAI_API_KEY")
 
 
 def moderate(user_msg):
