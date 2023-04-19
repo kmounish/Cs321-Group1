@@ -1,16 +1,16 @@
 import openai
-import asyncio
+import os
 
-openai.api_key = "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"
+openai.api_key = "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" 
+# openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-async def send_request(user_msg):
-    conversation = [{'role': 'user', 'content': user_msg}]
+async def send_request(conversation):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=conversation
     )
 
-    conversation.append({'role': 'AI', 'content': response.choices[0]['message']['content']})
-    print(conversation)
-    return conversation[-1]['content']
+    conversation.append(
+        {'role': 'assistant', 'content': response.choices[0]['message']['content']})
+    return conversation

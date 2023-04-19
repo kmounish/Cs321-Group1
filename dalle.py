@@ -1,4 +1,9 @@
 import requests
+import os
+
+
+API_KEY = "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" 
+# API_KEY = os.getenv("DALLE_API_KEY")
 
 
 async def send_request(user_msg):
@@ -15,7 +20,7 @@ async def send_request(user_msg):
                 'size': '512x512',
                 'response_format': 'url'
             }, headers={
-                'Authorization': f'Bearer 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'
+                'Authorization': f'Bearer {API_KEY}'
             })
 
             # Parse the response to get the generated image URL
