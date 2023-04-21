@@ -4,8 +4,11 @@ Semester Project
 
 SET UP:
   `python -m pip install --upgrade pip`
+  
   `pip install build`
+  
   `pip install discord`
+  
   `pip install openai`
 
 run these commands in your terminal and then run main.py
