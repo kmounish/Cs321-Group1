@@ -34,9 +34,9 @@ jobs:
         pip install discord
         pip install openai
     - name: Build package
-      run: 
-        python -m build
-        python main.py  
+      run: python -m build
+    - name: Run Discord
+      run: python main.py  
     - name: Publish package
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
