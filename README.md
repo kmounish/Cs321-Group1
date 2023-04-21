@@ -3,6 +3,7 @@ Semester Project
 
 
 SET UP:
+
   `python -m pip install --upgrade pip`
   
   `pip install build`
