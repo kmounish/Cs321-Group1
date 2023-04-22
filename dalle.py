@@ -1,10 +1,8 @@
 import requests
 import os
 
-
-
+# Set the API key from environment variable
 API_KEY = os.getenv("DALLE_API_KEY")
-
 
 
 async def send_request(user_msg):
@@ -30,5 +28,8 @@ async def send_request(user_msg):
             image_url = response_data['data'][0]['url']
 
             return image_url
+
     except Exception as e:
+        # Print error message if an exception is raised
         print(e)
+        return "There was a problem sending your request, wait a moment and try again."
