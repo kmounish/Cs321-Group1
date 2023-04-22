@@ -34,6 +34,7 @@ async def handle_chat(msg, user_msg):
             if msg.author in conversations[i]:
                 conversations[i][msg.author].append(
                     {'role': 'user', 'content': user_msg})
+
                 convo = conversations[i][msg.author]
                 convo_exists = True
         if not convo_exists:
@@ -43,6 +44,7 @@ async def handle_chat(msg, user_msg):
         response = await chat.send_request(convo)
         display_response = "```"+response[-1]['content']+"```"
         await msg.channel.send(display_response)
+
 
 
 async def handle_davinci(msg, user_msg):
@@ -58,6 +60,7 @@ async def handle_help(msg, user_msg):
     response = responses.handle_response("help")
     display_response = "```"+response+"```"
     await msg.channel.send(display_response)
+
 
 commands = {
     "!dalle": handle_dalle,
