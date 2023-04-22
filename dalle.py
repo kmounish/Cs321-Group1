@@ -3,8 +3,7 @@ import os
 
 
 
-API_KEY = "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" 
-# API_KEY = os.getenv("DALLE_API_KEY")
+API_KEY = os.getenv("DALLE_API_KEY")
 
 
 
