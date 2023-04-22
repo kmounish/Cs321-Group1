@@ -68,13 +68,15 @@ async def send_message(msg, user_msg):
         await msg.channel.send(f"There was a problem sending your request: {str(e)}")
 
 
-def run_discord_bot(token):
+def run_discord_bot(token, test=False):
     intents = discord.Intents.all()
     client = discord.Client(intents=intents)
 
     @client.event
     async def on_ready():
         print(f'{client.user} is now running')
+        if test:
+            exit(0)
 
     @client.event
     async def on_message(message):
