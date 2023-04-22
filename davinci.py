@@ -1,7 +1,10 @@
 import openai
 import os
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+
+openai.api_key = "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"
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 
 async def send_request(prompt):
@@ -14,8 +17,10 @@ async def send_request(prompt):
             stop=None,
             temperature=0.5,
         )
+        unfiltered_resposne = response.choices[0].text.strip()
+        filetered_response = "```"+unfiltered_resposne+"```"
+        return filetered_response
 
-        return response.choices[0].text.strip()
     except Exception as e:
         print(e)
         return "There was a problem sending your request. Check if OpenAI is down."
