@@ -34,4 +34,4 @@ jobs:
         pip install discord
         pip install openai
     - name: Run Discord
-      run: python main.py  
+      run: python main_test.py  
