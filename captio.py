@@ -44,8 +44,16 @@ async def handle_chat(msg, user_msg):
         # Send the request to ChatGPT and await the response
         response = await chat.send_request(convo)
 
-        # Send the bot's response in Discord
-        await msg.channel.send(response[-1]['content'])
+        # Check if the response is too long for Discord
+        response_length = len(response[-1]['content'])
+        if response_length > 2000:
+            # If the response is too long, split it up
+            split_responses = [(response[-1]['content'])[i:i + 2000] for i in range(0, response_length, 2000)]
+            for response_i in split_responses:
+                await msg.channel.send(response_i)
+        else:
+            # Otherwise send the response as is
+            await msg.channel.send(response[-1]['content'])
 
 
 async def handle_davinci(msg, user_msg):
